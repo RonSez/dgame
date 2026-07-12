@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* Self-hosted fonts (bundled for offline use) */
+@import "@fontsource/anton/400.css";
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource/space-mono/400.css";
+@import "@fontsource/space-mono/700.css";
+
+@theme {
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  /* After-dark plum base */
+  --color-void: #0b0713;
+  --color-surface: #160d24;
+  --color-surface-2: #1f1338;
+  --color-hairline: #2c1d47;
+  --color-haze: #9a86c4;
+  --color-chalk: #f4ecff;
+
+  /* Per-mode neons — each game owns a color */
+  --color-neon-cyan: #25f4ee;
+  --color-neon-pink: #ff2e88;
+  --color-neon-violet: #b06bff;
+  --color-neon-gold: #ffcf3d;
+  --color-neon-red: #ff4d4d;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-void);
+  background-image:
+    radial-gradient(120% 90% at 50% -10%, #1a0f2e 0%, var(--color-void) 55%),
+    radial-gradient(100% 60% at 100% 110%, #180a26 0%, transparent 60%);
+  background-attachment: fixed;
+  color: var(--color-chalk);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  /* Respect notches / home indicators */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Faint moving scanlines — the "seedy neon bar" atmosphere. One quiet effect. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+/* The signature: neon glow driven by a per-mode --glow color */
+.neon-text {
+  color: var(--glow, var(--color-chalk));
+  text-shadow:
+    0 0 8px color-mix(in srgb, var(--glow) 60%, transparent),
+    0 0 24px color-mix(in srgb, var(--glow) 45%, transparent);
+}
+
+.neon-ring {
+  border: 1px solid color-mix(in srgb, var(--glow) 55%, transparent);
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--glow) 25%, transparent),
+    inset 0 0 24px color-mix(in srgb, var(--glow) 8%, transparent);
+}
+
+.neon-fill {
+  background: color-mix(in srgb, var(--glow) 16%, var(--color-surface));
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-card-in {
+  animation: card-in 0.32s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.94);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pop {
+  animation: pop 0.18s ease-out;
+}
+
+/* Accessibility floor */
+:where(button, a, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-neon-cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* "Neon atmosphere" off — kill scanlines and soften glow for a calmer look */
+:root[data-effects="off"] body::after {
+  display: none;
+}
+:root[data-effects="off"] .neon-text {
+  text-shadow: none;
+}
+:root[data-effects="off"] .neon-ring {
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  body::after {
+    display: none;
+  }
+}
