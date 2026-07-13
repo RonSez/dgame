@@ -60,6 +60,15 @@ export const MODES: ModeMeta[] = [
     emoji: "🫦",
     glow: "--color-neon-lime",
   },
+  {
+    id: "hotpotato",
+    kind: "hotpotato",
+    title: ["Hot", "Potato"],
+    tagline: "Name it. Pass it. Don't be holding when it blows.",
+    howTo: "Pick a heat level. The phone shows a category — shout something that fits, then SLAM it into the next person's hands. A hidden fuse is ticking. Whoever's holding it when the phone buzzes drinks.",
+    emoji: "🥔",
+    glow: "--color-neon-orange",
+  },
 ];
 
 export function getMode(id: ModeId): ModeMeta {

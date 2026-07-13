@@ -7,6 +7,7 @@ import { TruthOrDare } from "./screens/TruthOrDare";
 import { Paranoia } from "./screens/Paranoia";
 import { KingsCup } from "./screens/KingsCup";
 import { Contact } from "./screens/Contact";
+import { HotPotato } from "./screens/HotPotato";
 import { getMode } from "./data/modes";
 
 function Game({ modeId }: { modeId: ReturnType<typeof getMode>["id"] }) {
@@ -22,6 +23,8 @@ function Game({ modeId }: { modeId: ReturnType<typeof getMode>["id"] }) {
       return <KingsCup mode={mode} />;
     case "contact":
       return <Contact mode={mode} />;
+    case "hotpotato":
+      return <HotPotato mode={mode} />;
   }
 }
 

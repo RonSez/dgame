@@ -1,4 +1,11 @@
-export type ModeId = "nhie" | "mlt" | "tod" | "paranoia" | "kings" | "contact";
+export type ModeId =
+  | "nhie"
+  | "mlt"
+  | "tod"
+  | "paranoia"
+  | "kings"
+  | "contact"
+  | "hotpotato";
 
 /** Which engine renders a mode. */
 export type ModeKind =
@@ -6,7 +13,8 @@ export type ModeKind =
   | "truthOrDare"
   | "paranoia"
   | "kings"
-  | "contact";
+  | "contact"
+  | "hotpotato";
 
 export interface ModeMeta {
   id: ModeId;
