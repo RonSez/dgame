@@ -47,3 +47,27 @@ export const neverHaveIEver: string[] = [
   "used a fake name on a night out",
   "gotten back with an ex I swore I was done with",
 ];
+
+// Spicier completions, added on top of the above when Spicy mode is on. 18+.
+export const neverHaveIEverSpicy: string[] = [
+  "had a threesome",
+  "hooked up with someone in this room",
+  "faked an entire relationship for the photos",
+  "sent a nude to the wrong chat",
+  "had sex somewhere I could've been caught",
+  "used a toy with a partner",
+  "hooked up with two people in the same friend group",
+  "been paid for something flirty",
+  "kissed someone while dating someone else",
+  "had a sugar daddy or sugar baby",
+  "moaned the wrong name",
+  "recorded myself with a partner",
+  "hooked up on the first date and never called back",
+  "joined the mile high club",
+  "had a crush on someone in this room right now",
+  "done a walk of shame in last night's clothes",
+  "slept with someone for a place to stay",
+  "had a friend walk in on me mid-hookup",
+  "sent a thirst trap to get someone's attention",
+  "hooked up with an ex's friend for revenge",
+];

@@ -6,6 +6,7 @@ import { PromptGame } from "./screens/PromptGame";
 import { TruthOrDare } from "./screens/TruthOrDare";
 import { Paranoia } from "./screens/Paranoia";
 import { KingsCup } from "./screens/KingsCup";
+import { Contact } from "./screens/Contact";
 import { getMode } from "./data/modes";
 
 function Game({ modeId }: { modeId: ReturnType<typeof getMode>["id"] }) {
@@ -19,6 +20,8 @@ function Game({ modeId }: { modeId: ReturnType<typeof getMode>["id"] }) {
       return <Paranoia mode={mode} />;
     case "kings":
       return <KingsCup mode={mode} />;
+    case "contact":
+      return <Contact mode={mode} />;
   }
 }
 

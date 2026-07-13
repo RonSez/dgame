@@ -46,3 +46,25 @@ export const mostLikelyTo: string[] = [
   "end up on a reality TV show",
   "leave the club with someone and forget their name",
 ];
+
+// Spicier options, added on top of the above when Spicy mode is on. 18+.
+export const mostLikelyToSpicy: string[] = [
+  "hook up with someone in this room tonight",
+  "have a secret sex tape",
+  "send a nude to the group chat by accident",
+  "have the wildest search history",
+  "have hooked up with a friend's ex",
+  "have a body count in the triple digits",
+  "moan the wrong name in bed",
+  "have joined the mile high club",
+  "be into something the rest of us couldn't handle",
+  "sleep with the last person they matched with",
+  "get caught hooking up in public",
+  "have a sugar daddy or sugar baby",
+  "kiss two people in this room tonight",
+  "have a drawer full of toys",
+  "start an OnlyFans and actually make money",
+  "have hooked up with someone way older",
+  "cheat if they knew they'd never get caught",
+  "have the most explicit DMs on their phone",
+];

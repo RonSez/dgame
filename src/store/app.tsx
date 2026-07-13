@@ -20,9 +20,15 @@ export interface Settings {
   haptics: boolean;
   /** Scanline / glow atmosphere. Off = calmer, higher-contrast. */
   effects: boolean;
+  /** Adds hotter questions & dares to every game. */
+  spicy: boolean;
 }
 
-const DEFAULT_SETTINGS: Settings = { haptics: true, effects: true };
+const DEFAULT_SETTINGS: Settings = {
+  haptics: true,
+  effects: true,
+  spicy: false,
+};
 
 const PLAYERS_KEY = "ptp.players";
 const SETTINGS_KEY = "ptp.settings";

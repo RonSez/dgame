@@ -38,3 +38,25 @@ export const paranoia: string[] = [
   "Who here would win in a fight?",
   "Who's most likely to lie about their number?",
 ];
+
+// Spicier "Who here…" questions, added on top when Spicy mode is on. 18+.
+export const paranoiaSpicy: string[] = [
+  "Who here would you most want to hook up with?",
+  "Who in this room is the best kisser?",
+  "Who would you pick for a one night stand?",
+  "Who here has the nicest body?",
+  "Who would you sneak off with right now if you could?",
+  "Who's the freakiest in the sheets?",
+  "Who here have you thought about in a dirty way?",
+  "Who would you say yes to if they made a move tonight?",
+  "Who's most likely to be amazing in bed?",
+  "Who here would you kiss on a dare, no hesitation?",
+  "Who would you pick for a friends-with-benefits deal?",
+  "Who's the biggest secret freak in the group?",
+  "Who here would you go home with tonight?",
+  "Who would you want to see take something off?",
+  "Who's most likely to send you a nude if you asked?",
+  "Who here gives off the best in-bed energy?",
+  "Who would you have a wild weekend with, no strings?",
+  "Who in this room could talk you into anything?",
+];

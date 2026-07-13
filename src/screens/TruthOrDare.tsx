@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { ModeMeta } from "../data/types";
 import { useApp } from "../store/app";
-import { truths, dares } from "../data/truthOrDare";
+import { truths, dares, truthsSpicy, daresSpicy } from "../data/truthOrDare";
 import { useDeck } from "../lib/deck";
 import { useTurn } from "../lib/turn";
 import { GameShell } from "../components/GameShell";
@@ -13,8 +13,17 @@ const DARE_GLOW = "--color-neon-red";
 
 export function TruthOrDare({ mode }: { mode: ModeMeta }) {
   const { players, settings } = useApp();
-  const truthDeck = useDeck(truths);
-  const dareDeck = useDeck(dares);
+  // Spicy mode adds the hotter cards on top; memoize for a stable deck source.
+  const truthSource = useMemo(
+    () => (settings.spicy ? [...truths, ...truthsSpicy] : truths),
+    [settings.spicy],
+  );
+  const dareSource = useMemo(
+    () => (settings.spicy ? [...dares, ...daresSpicy] : dares),
+    [settings.spicy],
+  );
+  const truthDeck = useDeck(truthSource);
+  const dareDeck = useDeck(dareSource);
   const turn = useTurn(players);
   const [pick, setPick] = useState<null | "truth" | "dare">(null);
 

@@ -1,7 +1,7 @@
 import type { ModeId, ModeMeta } from "./types";
-import { neverHaveIEver } from "./neverHaveIEver";
-import { mostLikelyTo } from "./mostLikelyTo";
-import { paranoia } from "./paranoia";
+import { neverHaveIEver, neverHaveIEverSpicy } from "./neverHaveIEver";
+import { mostLikelyTo, mostLikelyToSpicy } from "./mostLikelyTo";
+import { paranoia, paranoiaSpicy } from "./paranoia";
 
 export const MODES: ModeMeta[] = [
   {
@@ -51,6 +51,15 @@ export const MODES: ModeMeta[] = [
     emoji: "👑",
     glow: "--color-neon-gold",
   },
+  {
+    id: "contact",
+    kind: "contact",
+    title: ["Con-", "tact"],
+    tagline: "Touch. Hold. Don't break the chain.",
+    howTo: "The phone names two people and a way to touch — do it and HOLD. Each round stacks a new contact on top; keep them all connected. Break contact or chicken out = drink.",
+    emoji: "🫦",
+    glow: "--color-neon-lime",
+  },
 ];
 
 export function getMode(id: ModeId): ModeMeta {
@@ -59,15 +68,18 @@ export function getMode(id: ModeId): ModeMeta {
   return mode;
 }
 
-/** Single-deck prompt content for the plain "prompt" and "paranoia" engines. */
-export function getPromptDeck(id: ModeId): string[] {
+/**
+ * Single-deck prompt content for the plain "prompt" and "paranoia" engines.
+ * Spicy mode is a superset — it keeps the normal cards and adds the hotter ones.
+ */
+export function getPromptDeck(id: ModeId, spicy = false): string[] {
   switch (id) {
     case "nhie":
-      return neverHaveIEver;
+      return spicy ? [...neverHaveIEver, ...neverHaveIEverSpicy] : neverHaveIEver;
     case "mlt":
-      return mostLikelyTo;
+      return spicy ? [...mostLikelyTo, ...mostLikelyToSpicy] : mostLikelyTo;
     case "paranoia":
-      return paranoia;
+      return spicy ? [...paranoia, ...paranoiaSpicy] : paranoia;
     default:
       return [];
   }

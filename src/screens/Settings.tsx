@@ -7,11 +7,13 @@ function Toggle({
   hint,
   value,
   onChange,
+  glow = "--color-neon-cyan",
 }: {
   label: string;
   hint: string;
   value: boolean;
   onChange: (v: boolean) => void;
+  glow?: string;
 }) {
   return (
     <button
@@ -25,7 +27,7 @@ function Toggle({
         <span className="mt-0.5 block text-xs text-haze">{hint}</span>
       </span>
       <span
-        style={value ? glowStyle("--color-neon-cyan") : undefined}
+        style={value ? glowStyle(glow) : undefined}
         className={`relative h-7 w-12 shrink-0 rounded-full transition ${
           value ? "neon-fill neon-ring" : "bg-hairline"
         }`}
@@ -71,6 +73,13 @@ export function Settings() {
           hint="Scanlines and ambient glow. Turn off for a calmer, higher-contrast look."
           value={settings.effects}
           onChange={set("effects")}
+        />
+        <Toggle
+          label="Spicy mode"
+          hint="Adds hotter questions & dares to every game. 18+."
+          value={settings.spicy}
+          onChange={set("spicy")}
+          glow="--color-neon-red"
         />
 
         <button

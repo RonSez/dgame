@@ -22,7 +22,7 @@ export function Home() {
           CALL
         </h1>
         <p className="mt-4 text-sm text-haze">
-          Five games. One phone. No sober decisions.
+          Six games. One phone. No sober decisions.
         </p>
       </header>
 

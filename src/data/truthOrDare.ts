@@ -32,6 +32,44 @@ export const truths: string[] = [
   "If your ex walked in right now, what would you do?",
 ];
 
+// Spicier truths, added on top when Spicy mode is on. 18+.
+export const truthsSpicy: string[] = [
+  "Who in this room would you most want to sleep with?",
+  "What's the kinkiest thing you're secretly into?",
+  "What's the wildest place you've ever finished?",
+  "Rate everyone here as a potential hookup, out of 10.",
+  "What's the dirtiest thing you've ever said in bed?",
+  "Who here have you had a sex dream about?",
+  "What's your biggest turn-on that you never admit?",
+  "Describe the best sex you've ever had.",
+  "What's the most people you've been with in one week?",
+  "Who in this room would you have a threesome with — and who's the third?",
+  "What's a fantasy you've never told a partner?",
+  "Show or describe the last spicy thing you searched.",
+  "Who here would you let read your dirtiest messages?",
+  "What's the boldest move you've ever made on someone?",
+  "If you had to hook up with one person here, who and why?",
+];
+
+// Spicier dares, added on top when Spicy mode is on. 18+.
+export const daresSpicy: string[] = [
+  "Give the person on your right a 10-second lap dance.",
+  "Whisper the dirtiest thing you'd do to the person across from you.",
+  "Kiss the person to your left — cheek, or braver.",
+  "Take a body shot off whoever's willing.",
+  "Let the group pick someone for you to sit on for a full round.",
+  "Text your crush something flirty right now and read the reply.",
+  "Demonstrate your best move on the nearest pillow or person.",
+  "Show the last photo in your camera roll you'd normally hide.",
+  "Let the person of the group's choice trace your jawline with one finger.",
+  "Do your most convincing fake moan for the room.",
+  "Swap a piece of clothing with the person next to you.",
+  "Send a flirty voice note to the last person you texted.",
+  "Slow dance with someone here like the lights just dropped.",
+  "Let someone whisper a dare in your ear — do it or drink twice.",
+  "Recreate your go-to bedroom look for one photo.",
+];
+
 // Adult party dares. Refuse = drink (or double).
 export const dares: string[] = [
   "Text your most recent ex 'I miss you' — read the reply out loud.",

@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import type { ModeMeta } from "../data/types";
 import { useApp } from "../store/app";
 import { getPromptDeck } from "../data/modes";
@@ -9,7 +10,12 @@ import { buzz } from "../lib/haptics";
 
 export function PromptGame({ mode }: { mode: ModeMeta }) {
   const { players, settings } = useApp();
-  const deck = useDeck(getPromptDeck(mode.id));
+  // Memoize so the no-repeat deck keeps a stable source across renders.
+  const source = useMemo(
+    () => getPromptDeck(mode.id, settings.spicy),
+    [mode.id, settings.spicy],
+  );
+  const deck = useDeck(source);
   const turn = useTurn(players);
 
   const onNext = () => {
