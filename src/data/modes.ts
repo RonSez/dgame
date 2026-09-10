@@ -1,7 +1,8 @@
-import type { ModeId, ModeMeta } from "./types";
+import type { ModeId, ModeMeta, WyrCard } from "./types";
 import { neverHaveIEver, neverHaveIEverSpicy } from "./neverHaveIEver";
 import { mostLikelyTo, mostLikelyToSpicy } from "./mostLikelyTo";
 import { paranoia, paranoiaSpicy } from "./paranoia";
+import { wouldYouRather, wouldYouRatherSpicy } from "./wouldYouRather";
 
 export const MODES: ModeMeta[] = [
   {
@@ -23,6 +24,17 @@ export const MODES: ModeMeta[] = [
     emoji: "👉",
     glow: "--color-neon-pink",
     prefix: "Who is most likely to…",
+  },
+  {
+    id: "wyr",
+    kind: "wyr",
+    title: ["Would", "You", "Rather"],
+    tagline: "Guess their pick. Guess wrong, drink.",
+    howTo:
+      "Whoever holds the phone picks a side — silently, no tells. Everyone else calls out which one they think it was. Tap reveal: everyone who guessed wrong drinks. Nail it and you're safe.",
+    emoji: "⚖️",
+    glow: "--color-neon-mint",
+    prefix: "Would you rather…",
   },
   {
     id: "tod",
@@ -61,6 +73,16 @@ export const MODES: ModeMeta[] = [
     glow: "--color-neon-lime",
   },
   {
+    id: "hotseat",
+    kind: "hotseat",
+    title: ["Hot", "Seat"],
+    tagline: "One player. Sixty seconds. No dodging.",
+    howTo:
+      "One player takes the hot seat and the clock starts. The group fires questions at them — tap for a card, or just ask your own. Every question must be answered before the buzzer. Dodge one and you drink. When time's up, the seat passes on.",
+    emoji: "🪑",
+    glow: "--color-neon-blue",
+  },
+  {
     id: "hotpotato",
     kind: "hotpotato",
     title: ["Hot", "Potato"],
@@ -92,4 +114,9 @@ export function getPromptDeck(id: ModeId, spicy = false): string[] {
     default:
       return [];
   }
+}
+
+/** Card pairs for the Would You Rather engine. Spicy is a superset. */
+export function getWyrDeck(spicy = false): WyrCard[] {
+  return spicy ? [...wouldYouRather, ...wouldYouRatherSpicy] : wouldYouRather;
 }

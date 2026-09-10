@@ -4,6 +4,7 @@ import { useApp } from "../store/app";
 import { truths, dares, truthsSpicy, daresSpicy } from "../data/truthOrDare";
 import { useDeck } from "../lib/deck";
 import { useTurn } from "../lib/turn";
+import { useFilledCard } from "../lib/tokens";
 import { GameShell } from "../components/GameShell";
 import { NeonButton, glowStyle } from "../components/ui";
 import { buzz } from "../lib/haptics";
@@ -40,7 +41,8 @@ export function TruthOrDare({ mode }: { mode: ModeMeta }) {
   };
 
   const glow = pick === "dare" ? DARE_GLOW : TRUTH_GLOW;
-  const card = pick === "truth" ? truthDeck.current : dareDeck.current;
+  const raw = pick === "truth" ? truthDeck.current : dareDeck.current;
+  const card = useFilledCard(raw, players, turn.current);
 
   return (
     <GameShell mode={mode}>

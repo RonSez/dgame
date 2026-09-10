@@ -29,6 +29,20 @@ export const hotPotatoCategories: string[] = [
   "Video games",
   "Emojis you use a lot",
   "Things that make you cringe",
+  "Red flags on a first date",
+  "Things you'd never say to your boss",
+  "Lies people tell at work",
+  "Things people lie about on dating profiles",
+  "Excuses for not texting back",
+  "Ways to end a relationship",
+  "Things you've faked",
+  "Bad tattoo ideas",
+  "Things worth stealing from this room",
+  "Songs everyone here knows the words to",
+  "Things that ruin a first impression",
+  "Reasons to leave a party early",
+  "Apps on your phone right now",
+  "Things you'd grab in a fire",
 ];
 
 /** 18+: flirty / sexual categories, appended when spicy mode is on. */
@@ -45,4 +59,12 @@ export const hotPotatoCategoriesSpicy: string[] = [
   "Kinks people admit to",
   "Worst places to get caught",
   "Things that ruin the mood",
+  "Places you'd never do it again",
+  "Things you'd only say in the dark",
+  "Deal-breakers in bed",
+  "Excuses after a bad hookup",
+  "Things you'd find in a hookup's bedroom",
+  "Ways to say you want it without saying it",
+  "Red flags in the bedroom",
+  "Things that should stay in the group chat",
 ];

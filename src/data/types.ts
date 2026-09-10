@@ -5,7 +5,9 @@ export type ModeId =
   | "paranoia"
   | "kings"
   | "contact"
-  | "hotpotato";
+  | "hotpotato"
+  | "hotseat"
+  | "wyr";
 
 /** Which engine renders a mode. */
 export type ModeKind =
@@ -14,7 +16,9 @@ export type ModeKind =
   | "paranoia"
   | "kings"
   | "contact"
-  | "hotpotato";
+  | "hotpotato"
+  | "hotseat"
+  | "wyr";
 
 export interface ModeMeta {
   id: ModeId;
@@ -36,4 +40,10 @@ export interface KingRule {
   rank: string;
   label: string;
   rule: string;
+}
+
+/** One Would You Rather dilemma: two sides, pick one. */
+export interface WyrCard {
+  a: string;
+  b: string;
 }

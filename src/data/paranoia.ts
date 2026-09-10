@@ -37,6 +37,29 @@ export const paranoia: string[] = [
   "Who gives the best hugs?",
   "Who here would win in a fight?",
   "Who's most likely to lie about their number?",
+
+  // Sharper accusations
+  "Who here is lying the most tonight?",
+  "Who would you cut out of your life first if you had to pick?",
+  "Who in this room is the most fake?",
+  "Who's most likely to steal someone's partner?",
+  "Who here needs a reality check the most?",
+  "Who would you trust with your bank card and no limit?",
+  "Who holds a grudge the longest?",
+  "Who in this room has the biggest ego?",
+  "Who is a completely different person online?",
+  "Who would you never introduce to your parents?",
+  "Who has changed the most since you met them?",
+  "Who here is closest to falling apart?",
+  "Who would sell this whole group out for money?",
+  "Who do you actually miss when they're not around?",
+  "Who's the one person here you'd never date?",
+  "Who talks the most trash about people in this room?",
+  "Who here is the least self-aware?",
+  "Who would you swap phones with, no fear at all?",
+  "Who in this room could you not survive a week living with?",
+  "Who's putting on the biggest act right now?",
+  "Who would still show up for you in ten years?",
 ];
 
 // Spicier "Who here…" questions, added on top when Spicy mode is on. 18+.
@@ -59,4 +82,20 @@ export const paranoiaSpicy: string[] = [
   "Who here gives off the best in-bed energy?",
   "Who would you have a wild weekend with, no strings?",
   "Who in this room could talk you into anything?",
+
+  // Hotter accusations
+  "Who here has already hooked up with someone in this room?",
+  "Who would you let take complete control?",
+  "Who's most likely to have a kink they'd never admit?",
+  "Who would you never tell your partner you think about?",
+  "Who in this room would be the biggest mistake?",
+  "Who's sending the first risky text tonight?",
+  "Who would you pick if the room forced you to choose right now?",
+  "Who's the loudest behind a closed door?",
+  "Who would you want to be your first if you could redo it?",
+  "Who here could ruin a relationship if they actually tried?",
+  "Who has the most convincing innocent act?",
+  "Who would you say yes to for a weekend away, no questions asked?",
+  "Who's most likely to be thinking about someone here right now?",
+  "Who would be worth the drama?",
 ];

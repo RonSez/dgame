@@ -4,6 +4,7 @@ import { useApp } from "../store/app";
 import { getPromptDeck } from "../data/modes";
 import { useDeck } from "../lib/deck";
 import { useTurn } from "../lib/turn";
+import { useFilledCard } from "../lib/tokens";
 import { GameShell } from "../components/GameShell";
 import { NeonButton, glowStyle } from "../components/ui";
 import { buzz } from "../lib/haptics";
@@ -17,6 +18,7 @@ export function PromptGame({ mode }: { mode: ModeMeta }) {
   );
   const deck = useDeck(source);
   const turn = useTurn(players);
+  const card = useFilledCard(deck.current, players, turn.current);
 
   const onNext = () => {
     if (settings.haptics) buzz();
@@ -59,7 +61,7 @@ export function PromptGame({ mode }: { mode: ModeMeta }) {
               </p>
             )}
             <p className="text-2xl font-semibold leading-snug text-chalk">
-              {deck.current}
+              {card}
             </p>
           </div>
         </div>

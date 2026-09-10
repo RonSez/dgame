@@ -8,6 +8,8 @@ import { Paranoia } from "./screens/Paranoia";
 import { KingsCup } from "./screens/KingsCup";
 import { Contact } from "./screens/Contact";
 import { HotPotato } from "./screens/HotPotato";
+import { HotSeat } from "./screens/HotSeat";
+import { WouldYouRather } from "./screens/WouldYouRather";
 import { getMode } from "./data/modes";
 
 function Game({ modeId }: { modeId: ReturnType<typeof getMode>["id"] }) {
@@ -25,6 +27,10 @@ function Game({ modeId }: { modeId: ReturnType<typeof getMode>["id"] }) {
       return <Contact mode={mode} />;
     case "hotpotato":
       return <HotPotato mode={mode} />;
+    case "hotseat":
+      return <HotSeat mode={mode} />;
+    case "wyr":
+      return <WouldYouRather mode={mode} />;
   }
 }
 

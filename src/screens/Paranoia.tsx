@@ -4,6 +4,7 @@ import { useApp } from "../store/app";
 import { getPromptDeck } from "../data/modes";
 import { useDeck } from "../lib/deck";
 import { useTurn } from "../lib/turn";
+import { useFilledCard } from "../lib/tokens";
 import { GameShell } from "../components/GameShell";
 import { NeonButton, glowStyle } from "../components/ui";
 import { buzz } from "../lib/haptics";
@@ -14,6 +15,7 @@ export function Paranoia({ mode }: { mode: ModeMeta }) {
   const { players, settings } = useApp();
   const deck = useDeck(getPromptDeck(mode.id));
   const turn = useTurn(players);
+  const card = useFilledCard(deck.current, players, turn.current);
   const [flip, setFlip] = useState<Flip>(null);
 
   const doFlip = () => {
@@ -55,7 +57,7 @@ export function Paranoia({ mode }: { mode: ModeMeta }) {
               🔒 Keep it quiet
             </p>
             <p className="text-2xl font-semibold leading-snug text-chalk">
-              {deck.current}
+              {card}
             </p>
 
             {flip && (
